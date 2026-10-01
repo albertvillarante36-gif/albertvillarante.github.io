@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albert Villarante | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        background: '#0a0f1c',
+                        cardBg: '#111827',
+                        accent: '#60a5fa',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0f1c;
+            color: #f3f4f6;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0f1c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-[#0a0f1c]/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-white tracking-tighter">
+                        AV<span class="text-blue-500">.</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-white transition text-sm font-medium">About</a>
+                    <a href="#experience" class="text-gray-300 hover:text-white transition text-sm font-medium">Experience</a>
+                    <a href="#skills" class="text-gray-300 hover:text-white transition text-sm font-medium">Skills</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition text-sm font-medium">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">About</a>
+                <a href="#experience" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Experience</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Skills</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
+            <div class="relative mb-8 mt-10">
+                <!-- Glowing Profile Picture -->
+                <div class="w-48 h-48 rounded-full border-4 border-blue-500 p-1 mx-auto shadow-[0_0_40px_rgba(59,130,246,0.4)] relative">
+                    <img 
+                        src="518272287_2592248077778327_438493351642075051_n_2.jpg" 
+                        alt="Albert Villarante" 
+                        class="w-full h-full rounded-full object-cover"
+                        onerror="this.src='https://placehold.co/400x400/1e293b/60a5fa?text=AV'"
+                    >
+                </div>
+            </div>
+
+            <!-- Name and Title -->
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+                Albert <span class="text-accent">Villarante</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 font-light">
+                Customer Support Specialist | Shopify & Client Success Professional
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md mx-auto">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-envelope"></i> Get In Touch
+                </a>
+                <a href="#experience" class="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-gray-600 text-white font-semibold rounded-full hover:bg-gray-800 hover:border-gray-400 transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-briefcase"></i> View Experience
+                </a>
+            </div>
+
+            <div class="absolute bottom-10 animate-bounce">
+                <a href="#about" class="text-gray-500 hover:text-white transition">
+                    <i class="fa-solid fa-chevron-down text-xl"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-[#0d1323]">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">About <span class="text-accent">Me</span></h2>
+                    <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-8"></div>
+                </div>
+                
+                <div class="bg-cardBg p-8 md:p-10 rounded-2xl border border-gray-800 shadow-xl leading-relaxed text-gray-300 text-lg">
+                    <p class="mb-6">
+                        I started my professional journey at 20 years old in October 2022 as a Customer Experience Agent at Alorica Lipa. Within a few months, I accepted a contractual opportunity in Ajman, UAE, where I worked as an Assistant Manager supporting day-to-day operations, client coordination, invoicing, and payment collection. After returning to the Philippines in August 2023, I rejoined Alorica before moving to TaskUs in March 2025 as a Remote Customer Service Representative supporting e-commerce operations.
+                    </p>
+                    <p>
+                        Across these roles, I have developed hands-on experience in customer service, administrative support, invoicing, client communication, e-commerce order management, CRM systems, and remote operations. I bring a practical, adaptable approach to work and have experience growing from frontline customer support into roles involving greater responsibility, coordination, and operational support.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Work <span class="text-accent">History</span></h2>
+                    <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-8"></div>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Job 1 -->
+                    <div class="bg-cardBg p-8 rounded-2xl border border-gray-800 hover:border-blue-500/50 transition-colors group relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-accent scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Lead Generation Specialist</h3>
+                                <p class="text-accent font-medium">Independent / Remote</p>
+                            </div>
+                            <span class="inline-block bg-gray-800 text-gray-300 text-sm px-3 py-1 rounded-full whitespace-nowrap">
+                                July 2026 – July 30, 2026
+                            </span>
+                        </div>
+                        <ul class="list-disc list-outside ml-5 text-gray-400 space-y-2 mt-4 marker:text-gray-600">
+                            <li>Engineered targeted data scraping workflows to build and refine prospective client databases.</li>
+                            <li>Integrated ChatGPT to expedite data extraction and streamline structured research workflows.</li>
+                            <li>Audited datasets to eliminate duplicates, guaranteeing high data integrity before recording qualified leads within HubSpot CRM.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="bg-cardBg p-8 rounded-2xl border border-gray-800 hover:border-blue-500/50 transition-colors group relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-accent scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Remote Customer Service Representative</h3>
+                                <p class="text-accent font-medium">TaskUs | Batangas, PH</p>
+                            </div>
+                            <span class="inline-block bg-gray-800 text-gray-300 text-sm px-3 py-1 rounded-full whitespace-nowrap">
+                                March 2025 – July 2026
+                            </span>
+                        </div>
+                        <ul class="list-disc list-outside ml-5 text-gray-400 space-y-2 mt-4 marker:text-gray-600">
+                            <li>Managed high-volume inbound and outbound communications across voice, email, and live chat channels with exceptional empathy.</li>
+                            <li>Processed e-commerce orders via Shopify and ensured real-time updates within the CRM database.</li>
+                            <li>Executed targeted follow-up campaigns and streamlined scheduling to boost account engagement.</li>
+                            <li>Investigated and resolved complex escalations, consistently achieving top-tier QA benchmarks and CSAT scores.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="bg-cardBg p-8 rounded-2xl border border-gray-800 hover:border-blue-500/50 transition-colors group relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-accent scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Customer Service Representative</h3>
+                                <p class="text-accent font-medium">Alorica | Lipa City, PH</p>
+                            </div>
+                            <span class="inline-block bg-gray-800 text-gray-300 text-sm px-3 py-1 rounded-full whitespace-nowrap">
+                                November 2023 – January 2025
+                            </span>
+                        </div>
+                        <ul class="list-disc list-outside ml-5 text-gray-400 space-y-2 mt-4 marker:text-gray-600">
+                            <li>Handled front-line digital and voice support with strict adherence to established Quality Assurance standards.</li>
+                            <li>Navigated knowledge bases and CRM tools to efficiently resolve account, billing, and technical inquiries.</li>
+                            <li>Applied active listening and conflict-resolution techniques to successfully de-escalate sensitive situations and protect brand reputation.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 4 -->
+                    <div class="bg-cardBg p-8 rounded-2xl border border-gray-800 hover:border-blue-500/50 transition-colors group relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-accent scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Assistant Manager & Personal Assistant</h3>
+                                <p class="text-accent font-medium">Ramasat Advertising L.L.C. | Ajman, UAE</p>
+                            </div>
+                            <span class="inline-block bg-gray-800 text-gray-300 text-sm px-3 py-1 rounded-full whitespace-nowrap">
+                                January 2023 – August 2023
+                            </span>
+                        </div>
+                        <ul class="list-disc list-outside ml-5 text-gray-400 space-y-2 mt-4 marker:text-gray-600">
+                            <li>Directed operational workflows and provided direct administrative support to senior leadership.</li>
+                            <li>Managed a team of 7 factory workers to align project deliverables and maximize operational efficiency.</li>
+                            <li>Coordinated client communications, vendor schedules, and campaign timelines to guarantee on-time project execution.</li>
+                            <li>Processed invoices and managed payment collections accurately using QuickBooks.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 5 -->
+                    <div class="bg-cardBg p-8 rounded-2xl border border-gray-800 hover:border-blue-500/50 transition-colors group relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-accent scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Customer Experience Agent (First Job)</h3>
+                                <p class="text-accent font-medium">Alorica | Lipa City, PH</p>
+                            </div>
+                            <span class="inline-block bg-gray-800 text-gray-300 text-sm px-3 py-1 rounded-full whitespace-nowrap">
+                                October 2022 – January 2023
+                            </span>
+                        </div>
+                        <ul class="list-disc list-outside ml-5 text-gray-400 space-y-2 mt-4 marker:text-gray-600">
+                            <li>Delivered dedicated frontline support across voice, email, and live chat channels for retail and service accounts.</li>
+                            <li>Resolved customer inquiries swiftly by navigating internal knowledge bases and adhering to strict performance metrics.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 bg-[#0d1323]">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Core <span class="text-accent">Competencies</span></h2>
+                    <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-8"></div>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Technical toolkit and specialized abilities developed throughout my career.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Customer Operations -->
+                    <div class="bg-cardBg border border-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-headset text-2xl text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Customer Operations</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Multichannel Support</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Voice, Live Chat, Email</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Escalation Resolution</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Conflict Resolution</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Lead Generation</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Prospecting</span>
+                        </div>
+                    </div>
+
+                    <!-- Administrative Workflows -->
+                    <div class="bg-cardBg border border-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-clipboard-list text-2xl text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Admin Workflows</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Data Scraping</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Verification</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Appointment Scheduling</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Duplicate Auditing</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Data Entry</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Invoicing</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Payment Collection</span>
+                        </div>
+                    </div>
+
+                    <!-- Software & Platforms -->
+                    <div class="bg-cardBg border border-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-laptop-code text-2xl text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Software & Platforms</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Shopify E-Commerce</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">HubSpot CRM</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">ChatGPT</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">AI Research Tools</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">Google Workspace</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">MS Office Suite</span>
+                            <span class="px-3 py-1.5 bg-gray-800/50 text-gray-300 rounded-lg text-sm border border-gray-700">QuickBooks Accounting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 relative overflow-hidden">
+            <!-- Background glow decoration -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+            
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get In <span class="text-accent">Touch</span></h2>
+                    <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-8"></div>
+                    <p class="text-gray-400">Feel free to reach out for collaborations, opportunities, or just to say hello.</p>
+                </div>
+
+                <div class="bg-cardBg border border-gray-800 rounded-3xl p-8 md:p-12 shadow-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                        <!-- Location -->
+                        <div class="flex flex-col items-center p-4">
+                            <div class="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-4 text-accent">
+                                <i class="fa-solid fa-location-dot text-2xl"></i>
+                            </div>
+                            <h4 class="text-white font-semibold mb-2">Location</h4>
+                            <p class="text-gray-400">Lipa City, Batangas, PH</p>
+                        </div>
+                        
+                        <!-- Phone -->
+                        <div class="flex flex-col items-center p-4 border-t border-b md:border-t-0 md:border-b-0 md:border-l md:border-r border-gray-800">
+                            <div class="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-4 text-accent">
+                                <i class="fa-solid fa-phone text-2xl"></i>
+                            </div>
+                            <h4 class="text-white font-semibold mb-2">Phone</h4>
+                            <a href="tel:+639306118149" class="text-gray-400 hover:text-white transition">+63 930 611 8149</a>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="flex flex-col items-center p-4">
+                            <div class="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-4 text-accent">
+                                <i class="fa-solid fa-envelope text-2xl"></i>
+                            </div>
+                            <h4 class="text-white font-semibold mb-2">Email</h4>
+                            <a href="mailto:albertvillarante36@gmail.com" class="text-gray-400 hover:text-white transition">albertvillarante36@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-cardBg py-8 border-t border-gray-800 text-center">
+        <p class="text-gray-500 text-sm">
+            &copy; <span id="year"></span> Albert Villarante. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar blur on scroll
+        const navbar = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-lg', 'bg-[#0a0f1c]/95');
+                navbar.classList.remove('bg-[#0a0f1c]/90');
+            } else {
+                navbar.classList.remove('shadow-lg', 'bg-[#0a0f1c]/95');
+                navbar.classList.add('bg-[#0a0f1c]/90');
+            }
+        });
+    </script>
+</body>
+</html>
